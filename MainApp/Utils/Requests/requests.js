@@ -1,4 +1,4 @@
-import foodData from "../Data/foodData";
+import { foodData } from "../Data/foodData";
 import userData from "../Data/userData";
 import { foodCategories } from "../Data/foodData";
 
@@ -75,10 +75,28 @@ const axios = async ({ url, data }) => {
       message: "successfully returned categories",
     };
   }
+  if (url === GET_FOOD_DATA_FROM_CATEGORY) {
+    const match = (item) => item.toLowerCase() === data?.tag.toLowerCase();
+    const fData = foodData.filter((item) => item?.tags.some(match));
+    if (fData?.length > 0) {
+      return {
+        data: fData,
+        status: 1,
+        message: "successfully returned categories",
+      };
+    } else {
+      return {
+        data: [],
+        status: 1,
+        message: "Did not find any items",
+      };
+    }
+  }
 };
 
 //GET REQUESTS
 export const GET_DISH = "/get_dish_rn";
 export const GET_ALL_FOOD_CATEGORIES = "/getAllFoodCategories";
+export const GET_FOOD_DATA_FROM_CATEGORY = "/getFoodDataFromCategory";
 //POST REQUEST
 export const LOGIN_USER = "/login_user";
