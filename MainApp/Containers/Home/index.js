@@ -26,8 +26,8 @@ const Home = () => {
     });
   }, []);
   console.log(foodCategories);
-  const onPressCategory = () => {
-    navigation.navigate("FoodCategory");
+  const onPressCategory = (category) => {
+    navigation.navigate("FoodCategory", { category });
   };
   return (
     <View style={{ flexShrink: 1 }}>
