@@ -7,6 +7,7 @@ import Styles from "../Utils/Styles";
 import { LinearGradient } from "expo-linear-gradient";
 
 const FoodCategoryListItem = ({ item, onPressCategory }) => {
+  const category = item?.title;
   return (
     <TouchableOpacity
       style={{
@@ -24,7 +25,7 @@ const FoodCategoryListItem = ({ item, onPressCategory }) => {
       }}
       activeOpacity={0.6}
       delayPressIn={0}
-      onPress={onPressCategory}
+      onPress={() => onPressCategory(category)}
     >
       <LinearGradient
         // Button Linear Gradient
