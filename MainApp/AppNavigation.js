@@ -2,6 +2,7 @@
 import React from "react";
 import Register from "./Containers/Register";
 import Home from "./Containers/Home";
+import FoodCategory from "./Containers/FoodCategory";
 import { createStackNavigator } from "@react-navigation/stack";
 
 const Stack = createStackNavigator();
@@ -15,7 +16,7 @@ const AppNavigation = () => {
     >
       <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="FoodCategory" component={Register} />
+      <Stack.Screen name="FoodCategory" component={FoodCategory} />
     </Stack.Navigator>
   );
 };
