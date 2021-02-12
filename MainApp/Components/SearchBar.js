@@ -2,14 +2,16 @@ import { Icon } from "native-base";
 import React from "react";
 import { View, TextInput } from "react-native";
 import Colors from "../Utils/Colors";
-const SearchBar = () => {
+const SearchBar = ({ contentContainer }) => {
   return (
     <View
-      style={{
-        paddingHorizontal: 20,
-        paddingVertical: 20,
-        alignContent: "center",
-      }}
+      style={[
+        {
+          paddingHorizontal: 20,
+          alignContent: "center",
+        },
+        { ...contentContainer },
+      ]}
     >
       <View
         style={{
@@ -28,6 +30,7 @@ const SearchBar = () => {
         <TextInput
           editable
           maxLength={40}
+          returnKeyType={"search"}
           style={{
             backgroundColor: "white",
             fontSize: 20,
