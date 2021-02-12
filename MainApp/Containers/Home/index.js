@@ -71,7 +71,7 @@ const Home = () => {
             Comeyá
           </Text>
         </View>
-        <SearchBar />
+        <SearchBar contentContainer={{ paddingBottom: 20 }} />
         <FlatList
           numColumns={2}
           data={foodCategories}
