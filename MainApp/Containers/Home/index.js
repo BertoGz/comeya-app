@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
+  Alert,
 } from "react-native";
 import { getAllFoodCategories } from "../../Utils/Requests";
 import SearchBar from "../../Components/SearchBar";
@@ -14,7 +15,7 @@ import Colors from "../../Utils/Colors";
 import Styles from "../../Utils/Styles";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-
+import { getFoodDataFromCategory } from "../../Utils/Requests";
 const Home = () => {
   const [foodCategories, setFoodCategories] = useState([]);
   const navigation = useNavigation();
@@ -27,12 +28,22 @@ const Home = () => {
   }, []);
   console.log(foodCategories);
   const onPressCategory = (category) => {
-    navigation.navigate("FoodCategory", { category });
+    console.log("hello", category);
+    getFoodDataFromCategory({
+      tag: category,
+      onSuccess: (data) => {
+        if (data.length > 0) {
+          navigation.navigate("FoodCategory", { foodData: data, category });
+        } else {
+          Alert.alert("No Data");
+        }
+      },
+      onFailure: () => {},
+    });
   };
   return (
     <View style={{ flexShrink: 1 }}>
       <LinearGradient
-        // Button Linear Gradient
         colors={[
           "rgba(255,255,255,.3)",
           Colors.secondary,
@@ -50,7 +61,13 @@ const Home = () => {
 
       <ScrollView>
         <View style={{ height: 100, ...Styles.centered }}>
-          <Text style={{ ...Styles.h1, ...Styles.boldText, color: "white" }}>
+          <Text
+            style={{
+              ...Styles.h1,
+              ...Styles.boldText,
+              color: Colors.textLight,
+            }}
+          >
             Comeyá
           </Text>
         </View>
@@ -61,6 +78,7 @@ const Home = () => {
           renderItem={({ item }) => {
             return <FoodCategoryListItem {...{ item, onPressCategory }} />;
           }}
+          keyExtractor={(item) => item.id.toString()}
         />
       </ScrollView>
     </View>

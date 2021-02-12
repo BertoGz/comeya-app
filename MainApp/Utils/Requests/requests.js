@@ -33,7 +33,7 @@ const sendReq = async (endpoint, params) => {
     data: params,
   });
   return new Promise((res, rej) => {
-    setTimeout(() => res(response), 500);
+    setTimeout(() => res(response), 100);
   });
 };
 
