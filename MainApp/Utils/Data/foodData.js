@@ -52,17 +52,32 @@ export const foodData = [
     image:
       "https://natashaskitchen.com/wp-content/uploads/2019/08/Caprese-Salad-6.jpg",
   },
+  {
+    id: 5,
+    title: "Chopped Cheese",
+    ingrediants: ["ground beef", "tomatoes", "lettuce", "onion", "mayo"],
+    tags: ["classic"],
+    image:
+      "https://res.cloudinary.com/hksqkdlah/image/upload/ar_1:1,c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_344/SFS_Chopped-Cheese-Sandwiches-61_t6xnct",
+  },
+  {
+    id: 6,
+    title: "Nashville Hot Chicken",
+    ingrediants: ["chicken", "cajun seasoning", "pickles"],
+    tags: ["southern"],
+    image:
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hotchicken-1525987321.jpg",
+  },
 ];
 
 export const foodCategories = [
   { id: 0, title: "Healthy" },
-  { id: 1, title: "Asian" },
-  { id: 2, title: "Mexican" },
   { id: 3, title: "Classic" },
   { id: 4, title: "Italian" },
-  { id: 5, title: "Seafood" },
-  { id: 6, title: "Healthy" },
   { id: 7, title: "Southern" },
+  { id: 1, title: "Asian" },
+  { id: 2, title: "Mexican" },
+  { id: 5, title: "Seafood" },
 ];
 
 /**
