@@ -55,7 +55,14 @@ export const foodData = [
   {
     id: 5,
     title: "Chopped Cheese",
-    ingrediants: ["ground beef", "tomatoes", "lettuce", "onion", "mayo"],
+    ingrediants: [
+      "ground beef",
+      "cheese",
+      "tomatoes",
+      "lettuce",
+      "onion",
+      "mayo",
+    ],
     tags: ["classic"],
     image:
       "https://res.cloudinary.com/hksqkdlah/image/upload/ar_1:1,c_fill,dpr_2.0,f_auto,fl_lossy.progressive.strip_profile,g_faces:auto,q_auto:low,w_344/SFS_Chopped-Cheese-Sandwiches-61_t6xnct",
@@ -64,9 +71,17 @@ export const foodData = [
     id: 6,
     title: "Nashville Hot Chicken",
     ingrediants: ["chicken", "cajun seasoning", "pickles"],
-    tags: ["southern"],
+    tags: ["southern", "classic"],
     image:
       "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/hotchicken-1525987321.jpg",
+  },
+  {
+    id: 7,
+    title: "Carne Asada Tacos",
+    ingrediants: ["beef", "cilantro", "onion", "lime", "tomato", "garlic"],
+    tags: ["mexican"],
+    image:
+      "https://www.seriouseats.com/images/2015/09/20150814-carne-asada-food-lab-kenji-29.jpg",
   },
 ];
 
