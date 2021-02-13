@@ -3,8 +3,8 @@
 <h1>Food App</h1>
 ## Summary
 A mock App which main goal is to represent my current Frontend Developer expertise
-<img scr='./assets/capture1.png' alt="screenshot1" width="175">
-<img scr='./assets/capture1.png' alt="screenshot1" width="175">
+<img scr="./assets/capture1.png" alt="screenshot1" width="175"/>
+<img scr="./assets/capture1.png" alt="screenshot1" width="175"/>
 
 ## How To Install
 
