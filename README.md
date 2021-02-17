@@ -2,7 +2,7 @@
 
 ## Summary
 
-A mock App which main goal is to represent my current Frontend Developer expertise
+A mock App meant to represent my current Frontend Developer expertise
 
 ## How To Install
 
