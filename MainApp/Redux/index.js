@@ -1,11 +1,15 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import logger from "./logger";
+import logger from "redux-logger";
 import rootReducer from "./Reducers";
 
 export default function configureStore() {
-  const store = createStore(rootReducer, logger);
+  const middleware = [];
+  middleware.push(thunk);
+  middleware.push(logger);
+
+  const store = createStore(rootReducer, applyMiddleware(...middleware));
 
   return store;
 }
