@@ -94,11 +94,3 @@ export const foodCategories = [
   { id: 2, title: "Mexican" },
   { id: 5, title: "Seafood" },
 ];
-
-/**
- *  { title: "Classic" },
-  { title: "Italian" },
-  { title: "Seafood" },
-  { title: "Healthy" },
-  { title: "Asian" },
- */
