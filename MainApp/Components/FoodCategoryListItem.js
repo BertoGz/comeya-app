@@ -1,13 +1,14 @@
 import React from "react";
-import { Alert, Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 
 import { SCREEN_HEIGHT } from "../Constants";
-import Colors, { addColor } from "../Utils/Colors";
+import Colors from "../Utils/Colors";
 import Styles from "../Utils/Styles";
 import { LinearGradient } from "expo-linear-gradient";
 
 const FoodCategoryListItem = ({ item, onPressCategory }) => {
-  const category = item?.title;
+  const { title } = item || {};
+  const category = title;
   return (
     <TouchableOpacity
       style={{
@@ -38,7 +39,7 @@ const FoodCategoryListItem = ({ item, onPressCategory }) => {
         }}
       />
       <Text style={{ ...Styles.h2, ...Styles.boldText, color: "white" }}>
-        {item?.title}
+        {title}
       </Text>
     </TouchableOpacity>
   );
