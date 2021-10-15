@@ -4,13 +4,16 @@ import { StyleSheet, Text, View } from "react-native";
 import MainApp from "./MainApp";
 import configureStore from "./MainApp/Redux/index";
 import { Provider } from "react-redux";
+import { NativeBaseProvider } from "native-base";
 
 export const store = configureStore();
 
 export default function App() {
   return (
     <Provider store={store}>
-      <MainApp />
+      <NativeBaseProvider>
+        <MainApp />
+      </NativeBaseProvider>
     </Provider>
   );
 }
