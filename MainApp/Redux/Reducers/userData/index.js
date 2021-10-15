@@ -2,6 +2,7 @@
 import {
   /// Data State Constants...
   ADD_TO_FAVORITES,
+  REMOVE_FROM_FAVORITES,
   SET_FAVORITES,
 } from "../../Actions";
 
@@ -20,8 +21,14 @@ export default function appState(state = initialState, action) {
     }
     case ADD_TO_FAVORITES: {
       const updateFavorites = new Map(state.favorites);
-      const id = payload;
+      const { id } = payload;
       updateFavorites.set(id, true);
+      return { ...state, favorites: updateFavorites };
+    }
+    case REMOVE_FROM_FAVORITES: {
+      const updateFavorites = new Map(state.favorites);
+      const { id } = payload;
+      updateFavorites.delete(id, true);
       return { ...state, favorites: updateFavorites };
     }
 
